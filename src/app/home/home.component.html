@@ -1,0 +1,35 @@
+
+<div class="main">
+
+    <div class="content">
+      <div class="content-nav">
+        <div class="search">
+          <i class="fa fa-search"></i>
+          <input type="text" id="search-term" [(ngModel)]="searchText" placeholder="Search for a country..." >
+        </div>
+
+        <div class="filter">
+              <select [(ngModel)]="filterText" (change)="filterBy()" >
+                <option [ngValue]="undefined" [disabled]="true">Filter by region</option>  
+                <option *ngFor="let x of regionList" >{{x.region}}</option>
+              </select>
+      </div>
+      </div>
+
+        <ul class="cards">
+          <li *ngFor="let country of countryData | search : searchText" class="cards_item">
+            <div routerLink={{country.numericCode}} routerLinkActive="active"  class="card" >
+              <div class="card_image"><img src={{country.flags.png}}></div>
+              <div class="card_content">
+                <a class="card_title">{{country.name}}</a>
+                <p class="card_text">Population: <span>{{country.population}}</span></p>
+                <p class="card_text">Region: <span>{{country.region}}</span></p>
+                <p class="card_text">Capital <span>{{country.capital}}</span></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+

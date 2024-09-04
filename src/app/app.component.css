@@ -1,0 +1,27 @@
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+}
+
+.nav i{
+  margin-right: .5rem;
+}
+
+
+.content-nav{
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 490px) {
+.nav{
+  padding: 1rem 2rem;
+}
+}

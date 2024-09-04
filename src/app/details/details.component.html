@@ -1,0 +1,36 @@
+
+<div class="content">
+    <button class="back-btn" (click)="goBack()" ><i class="fa fa-arrow-left"></i>Back</button>
+    <div class="info">
+        <div class="country-flag">
+            <img src="{{countryInfo.flags.svg}}" alt="">
+        </div>
+        <div class="country-info">
+            <div class="title">{{countryInfo.name}}</div>
+            <table class="table">
+                <tr>
+                  <td>Native Name: <span>{{countryInfo.nativeName}}</span></td>
+                  <td>Top Level Domain:<span> {{countryInfo.topLevelDomain}}</span></td>
+                </tr>
+                <tr>
+                  <td>Population: <span>{{countryInfo.population}}</span></td>
+                  <td>Currencies: <span>{{countryInfo.currencies[0].code}}</span></td>
+                </tr>
+                <tr>
+                  <td>Region: <span>{{countryInfo.region}}</span></td>
+                  <td>Languages: <span>{{countryInfo.languages | languages}}</span></td>
+                </tr>
+                <tr>
+                  <td>Sub Region: <span>{{countryInfo.subregion}}</span></td>
+                </tr>
+                <tr>
+                  <td>Capital: <span>{{countryInfo.capital}}</span></td>
+                </tr>
+               
+              </table>
+            <div class="bottom-info">Border Countries: 
+               <span *ngFor="let i of bordersList">{{i}}</span>
+            </div>  
+        </div>
+    </div>
+</div>
